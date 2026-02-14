@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { InspectionLog } from '../types';
+import { InspectionLog } from '../types.ts';
 
 interface HistoryListProps {
   logs: InspectionLog[];

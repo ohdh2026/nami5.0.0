@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { InspectionLog, Status, ChecklistItem } from '../types';
-import { getCorrectiveActionSuggestion } from '../services/geminiService';
+import { InspectionLog, Status, ChecklistItem } from '../types.ts';
+import { getCorrectiveActionSuggestion } from '../services/geminiService.ts';
 
 interface ChecklistFormProps {
   log: InspectionLog;

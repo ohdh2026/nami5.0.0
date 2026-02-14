@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { InspectionLog, ChecklistItem, DEFAULT_EQUIPMENT, Status } from './types';
-import ChecklistForm from './components/ChecklistForm';
-import HistoryList from './components/HistoryList';
-import Header from './components/Header';
+import { InspectionLog, ChecklistItem, DEFAULT_EQUIPMENT, Status } from './types.ts';
+import ChecklistForm from './components/ChecklistForm.tsx';
+import HistoryList from './components/HistoryList.tsx';
+import Header from './components/Header.tsx';
 
 const App: React.FC = () => {
   const [logs, setLogs] = useState<InspectionLog[]>([]);
