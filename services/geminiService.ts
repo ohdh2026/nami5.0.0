@@ -1,9 +1,10 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export const getCorrectiveActionSuggestion = async (equipmentName: string, issueDescription: string) => {
+  // 호출 시점에 인스턴스를 생성하여 process.env.API_KEY가 주입된 이후에 실행되도록 보장합니다.
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
@@ -18,6 +19,6 @@ export const getCorrectiveActionSuggestion = async (equipmentName: string, issue
     return response.text?.trim() || "전문가 조치를 권고합니다.";
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "수동 조치 내용을 입력하세요.";
+    return "수동 조치 내용을 입력하세요. (API 키 확인 필요)";
   }
 };
